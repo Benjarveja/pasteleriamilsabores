@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="/styles/faq.css">
+</head>
+<body>
+    <header>
+        <div id="menu-container"></div>
+    </header>
+    <main class="faq-container">
+        <h2>Preguntas Frecuentes</h2>
+        <p class="intro">Aquí encontrarás respuestas a las preguntas más comunes sobre nuestros productos y servicios.</p>
+
+        <section class="faq">
+            <div class="faq-item">
+                <button class="faq-question">¿Con cuánta anticipación debo hacer mi pedido?</button>
+                <div class="faq-answer">
+                    <p>Recomendamos hacer tu pedido con al menos 48 horas de anticipación para asegurar disponibilidad y calidad.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">¿Hacen tortas personalizadas?</button>
+                <div class="faq-answer">
+                    <p>Sí, realizamos tortas personalizadas con diseños y sabores a elección. Contáctanos para más detalles.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">¿Tienen opciones sin azúcar o para personas celíacas?</button>
+                <div class="faq-answer">
+                    <p>Contamos con opciones sin azúcar y sin gluten. Especifica tu preferencia al realizar el pedido.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">¿Realizan entregas a domicilio?</button>
+                <div class="faq-answer">
+                    <p>Sí, realizamos entregas a domicilio dentro de la ciudad. El costo de envío dependerá de la ubicación.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Pastelería El Parrón. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        const questions = document.querySelectorAll('.faq-question');
+        questions.forEach(q => {
+            q.addEventListener('click', () => {
+                const item = q.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+    <script src="/js/menu.js"></script>
+</body>
+</html>

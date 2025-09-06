@@ -3,19 +3,20 @@
 .menu {
   background: #FFC0CB;
   border-bottom: 1px solid #eee;
-  padding: 10px 20px;
+  padding: 0.62rem 1.25rem;
   font-family: "Pacifico", cursive;
 }
 
 .menu-area {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 
 .menu-centro img {
-  height: 100px;
+  height: 6.25rem;
 }
+
 
 /* Secciones izquierda y derecha */
 .menu-izquierda ul,
@@ -23,7 +24,13 @@
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 30px 60px;
+  gap: 1.87rem 3.75rem;
+  
+}
+
+.menu-izquierda{
+  margin-left: 12rem;
+  margin-right: 2rem;
 }
 
 /* Estilos enlaces */
@@ -32,6 +39,8 @@
   color: #5D4037;
   font-weight: 500;
   text-transform: uppercase;
+  font-size: 1em;
+  line-height: 1.5em;
 }
 
 .menu a:hover {
@@ -40,17 +49,24 @@
 
 
 .menu a.activo {
-  color: #a85920; /* Color rosado como en la imagen */
+  color: #a85920;
 }
 
 /* Botón comprar */
 .enlaces-menu-derecho-comprar-online{
   background: #8B4513;
   color: #fff !important;
-  padding: 10px 20px;
+  padding: 0.60rem 1.20rem;
   border-radius: 25px;
   font-weight: bold;
 }
 .enlaces-menu-derecho-comprar-online:hover {
   background: #a85920;
+}
+
+.hamburger-btn {
+    display: none;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #5D4037;
 }

@@ -9,3 +9,11 @@ body{
 header{
     background-color: #FFC0CB;
 }
+
+.footer {
+    text-align: center;
+    padding: 15px;
+    background: #8B4513;
+    color: #B0BEC5;
+    margin-top: 40px;
+}

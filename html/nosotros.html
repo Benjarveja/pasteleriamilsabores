@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="/styles/nosotros.css">
+</head>
+<body>
+    <header>
+        <div id="menu-container"></div>
+    </header>
+    <main>
+        <section class="about-section">
+        <h2 class="about-title">Sobre Nosotros</h2>
+        <p class="about-description">
+            En <strong>Mil Sabores</strong> nos apasiona endulzar tus momentos más especiales. Desde nuestros inicios en Providencia, hemos trabajado para ofrecer productos artesanales con ingredientes de la mejor calidad.
+        </p>
+        
+        <!-- Misión y Visión -->
+        <div class="about-mv">
+            <div class="mv-item">
+                <h3>Misión</h3>
+                <p>Ofrecer una experiencia dulce y memorable a nuestros clientes, proporcionando tortas y productos
+                    de repostería de alta calidad para todas las ocasiones, mientras celebramos nuestras raíces
+                    históricas y fomentamos la creatividad en la repostería.</p>
+            </div>
+            <div class="mv-item">
+                <h3>Visión</h3>
+                <p>Convertirnos en la tienda online líder de productos de repostería en Chile, conocida por nuestra
+                    innovación, calidad y el impacto positivo en la comunidad, especialmente en la formación de nuevos
+                    talentos en gastronomía.</p>
+            </div>
+        </div>
+        </section>
+
+    <!-- Sucursales -->
+        <section class="branches-section">
+        <h2 class="branches-title">Nuestras Sucursales</h2>
+        <ul class="branches-list">
+            <li><strong>Casa Matriz:</strong> Av. Providencia 1234, Providencia, Santiago.</li>
+            <li>Las Condes: Av. Apoquindo 5432, Las Condes, Santiago.</li>
+            <li>Ñuñoa: Av. Irarrázaval 3456, Ñuñoa, Santiago.</li>
+            <li>Santiago Centro: Av. Libertador Bernardo O'Higgins 987, Santiago Centro.</li>
+        </ul>
+
+        <!-- Mapa -->
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps?q=Av.+Providencia+1234,+Providencia,+Santiago,+Chile&output=embed" 
+                width="100%" 
+                height="400" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </div>
+        </section>
+
+    <!-- Formulario de contacto -->
+        <section class="contact-section">
+            <h2 class="contact-title">Contáctanos</h2>
+            <form id="contactForm" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="name" placeholder="Tu nombre completo">
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email" placeholder="ejemplo@mail.com">
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensaje:</label>
+                    <textarea id="message" name="message" placeholder="Escribe tu mensaje"></textarea>
+                </div>
+                <button type="submit" class="contact-btn">Enviar</button>
+            </form>
+            <p id="form-message" class="form-message"></p>
+        </section>
+
+        <section class="social-section">
+            <h2 class="social-title">¡Síguenos en nuestras redes sociales!</h2>
+            <p class="social-text">Descubre nuevas creaciones, promociones y más en nuestras plataformas.</p>
+            
+            <div class="social-icons">
+                <a href="https://www.facebook.com" target="_blank" class="social-link facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com" target="_blank" class="social-link instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://wa.me/56912345678" target="_blank" class="social-link whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+        </section>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <script src="/js/nosotros.js"></script>
+
+    </main>
+    <script src="/js/menu.js"></script>
+
+    <footer class="footer">
+        <p>&copy; 2025 Pastelería Mil Sabores. Todos los derechos reservados. By Luci&Benja</p>
+    </footer>
+</body>
+</html>

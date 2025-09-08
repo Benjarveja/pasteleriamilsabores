@@ -11,8 +11,37 @@
     <header>
         <div id="menu-container"></div>
     </header>
-    <main>
+    <main>  
+        <section class="productos-section">
+            <h1>Nuestros Productos</h1>
 
+            <!-- Filtros -->
+            <div class="filtros">
+                <select id="categoria">
+                    <option value="">Todas las categorías</option>
+                    <option value="Tortas Cuadradas">Tortas Cuadradas</option>
+                    <option value="Tortas Circulares">Tortas Circulares</option>
+                    <option value="Postres Individuales">Postres Individuales</option>
+                    <option value="Productos Sin Azúcar">Productos Sin Azúcar</option>
+                    <option value="Pastelería Tradicional">Pastelería Tradicional</option>
+                    <option value="Productos Sin Gluten">Productos Sin Gluten</option>
+                    <option value="Productos Vegana">Productos Vegana</option>
+                    <option value="Tortas Especiales">Tortas Especiales</option>
+                </select>
+
+                <input type="number" id="precioMin" placeholder="Precio mínimo" min="0">
+                <input type="number" id="precioMax" placeholder="Precio máximo" min="0">
+
+                <button id="btnFiltrar">Filtrar</button>
+            </div>
+
+            <!-- Contenedor de productos -->
+            <div id="listaProductos" class="productos-grid">
+            <!-- Aquí se insertarán las tarjetas dinámicamente -->
+            </div>
+        </section>
+
+    <script src="/js/productos.js"></script>
     </main>
     <script src="/js/menu.js"></script>
 

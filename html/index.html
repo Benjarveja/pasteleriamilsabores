@@ -3,19 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio | Mil Sabores Pastelería</title>
+    <title>Pastelería Mil Sabores - Inicio</title>
+    <!-- Estilos compartidos -->
     <link rel="stylesheet" href="/styles/styles.css">
+    <!-- Estilos específicos de la página de inicio -->
+    <link rel="stylesheet" href="/styles/index.css">
+    <!-- Estilos del carrito de compras (global) -->
+    <link rel="stylesheet" href="/styles/carrito.css">
+    <!-- Estilos de las tarjetas de producto (reutilizados) -->
+    <link rel="stylesheet" href="/styles/productos.css">
+    <link rel="stylesheet" href="/styles/footer.css">
 </head>
 <body>
+
     <header>
+        <!-- El menú se inyecta aquí dinámicamente -->
         <div id="menu-container"></div>
     </header>
+
     <main>
 
+        <!-- 1. Slider de Imágenes -->
+        <section class="slider-container">
+            <div class="slider-wrapper">
+                <!-- Las imágenes se pueden añadir aquí -->
+                <div class="slide">
+                    <img src="/assets/noticia50anos.jpg" alt="Aniversario 50 años">
+                    <div class="slide-caption">
+                        <h2>50 Años de Dulce Tradición</h2>
+                        <p>Acompañándote en tus celebraciones más importantes.</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="/assets/noticiadiaadia.jpg" alt="Nuevos Productos">
+                    <div class="slide-caption">
+                        <h2>Nuevos Sabores Cada Día</h2>
+                        <p>Descubre nuestras últimas creaciones y déjate sorprender.</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="/assets/noticiaguinness.jpg" alt="Record Guinness">
+                    <div class="slide-caption">
+                        <h2>Una Historia de Récord</h2>
+                        <p>Orgullosos de nuestra participación en el Récord Guinness de 1995.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Introducción -->
+        <section class="intro-section">
+            <h1>Bienvenidos a Mil Sabores</h1>
+            <p>
+                Pastelería 1000 Sabores celebra su 50 aniversario como un referente en la repostería chilena. Famosa por su participación en un récord Guinness en 1995, cuando colaboró en la creación de la torta más grande del mundo, la pastelería busca renovar su sistema de ventas online para ofrecer una experiencia de compra moderna y accesible para sus clientes.
+            </p>
+        </section>
+
+        <!-- 3. Productos Populares -->
+        <section class="popular-section">
+            <h2 class="section-title">Nuestros Populares</h2>
+            <div class="productos-grid" id="popular-products-grid">
+                <!-- Las tarjetas de productos populares se inyectan aquí -->
+            </div>
+        </section>
+
+        <!-- 4. Opiniones de Clientes -->
+        <section class="reviews-section">
+            <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+            <div class="reviews-carousel-container">
+                <div class="reviews-wrapper" id="reviews-wrapper">
+                    <!-- Las tarjetas de opiniones se inyectan aquí -->
+                </div>
+                <button class="carousel-btn prev" id="review-prev-btn">&lt;</button>
+                <button class="carousel-btn next" id="review-next-btn">&gt;</button>
+            </div>
+        </section>
+
     </main>
-    <footer class="footer">
-        <p>&copy; 2025 Pastelería Mil Sabores. Todos los derechos reservados. By Luci&Benja</p>
-    </footer>
+
+    <div id="footer-container"></div>
+
+    <!-- Scripts -->
     <script src="/js/menu.js"></script>
+    <script src="/js/carrito.js"></script>
+    <script src="/js/index.js"></script>
+    <script src="/js/footer.js"></script>
+
 </body>
 </html>

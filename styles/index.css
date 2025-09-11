@@ -1,0 +1,169 @@
+/* Estilos para la página de Inicio (index.html) */
+
+/* --- Slider --- */
+.slider-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.slider-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    position: relative;
+}
+
+.slide img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    display: block;
+}
+
+.slide-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    color: white;
+    padding: 40px 20px 20px;
+    text-align: center;
+}
+
+.slide-caption h2 {
+    color: white !important;
+    margin: 0 0 10px 0;
+    font-size: 2.5em;
+}
+
+.slide-caption p {
+    color: white !important;
+    font-size: 1.2em;
+}
+
+/* --- Sección de Introducción --- */
+.intro-section {
+    max-width: 900px;
+    margin: 50px auto;
+    text-align: center;
+    padding: 20px;
+}
+
+.intro-section h1 {
+    font-size: 2.8em;
+    margin-bottom: 15px;
+}
+
+.intro-section p {
+    font-size: 1.1em;
+    line-height: 1.7;
+    color: var(--brand-brown-dark);
+}
+
+/* --- Sección Productos Populares y Opiniones --- */
+.popular-section, .reviews-section {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+/* --- Opiniones --- */
+.reviews-carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px; /* Ancho máximo para el carrusel */
+    margin: 0 auto; /* Centrar el carrusel */
+    overflow: hidden;
+}
+
+.reviews-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.review-card {
+    flex: 0 0 100%; /* Cada tarjeta ocupa el 100% del contenedor */
+    box-sizing: border-box;
+    background: #fff;
+    border: 1px solid #FFC0CB;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.review-card .stars {
+    color: #FFC107; /* Amarillo para las estrellas */
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.review-card .comment {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.review-card .author {
+    font-weight: bold;
+    text-align: right;
+    color: var(--brand-brown-light);
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.2s;
+}
+
+.carousel-btn:hover {
+    background-color: white;
+}
+
+.carousel-btn.prev {
+    left: 10px;
+}
+
+.carousel-btn.next {
+    right: 10px;
+}
+
+
+/* Adaptación para móviles */
+@media (max-width: 768px) {
+    .slide img {
+        height: 300px;
+    }
+    .slide-caption h2 {
+        font-size: 1.8em;
+    }
+    .slide-caption p {
+        font-size: 1em;
+    }
+    .intro-section h1, .section-title {
+        font-size: 2em;
+    }
+}

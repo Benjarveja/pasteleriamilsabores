@@ -164,6 +164,8 @@ document.addEventListener('DOMContentLoaded', () => {
     btnFinalizarCompra.addEventListener('click', () => {
         if (carrito.length > 0) {
             window.location.href = '/html/pago.html';
+        }else{
+            mostrarAviso('Agrega productos al carrito antes de finalizar la compra.')
         }
     });
 

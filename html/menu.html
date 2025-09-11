@@ -1,33 +1,34 @@
+<!-- El CSS se carga a través del fetch en menu.js, pero lo mantenemos aquí por si se usa el archivo de forma aislada -->
 <link rel="stylesheet" href="/styles/menu.css">
-<link rel="stylesheet" href="/styles/styles.css">
-<nav class="menu">
-  <div class="menu-area">
-    <div class="menu-izquierda">
-        <input type="checkbox" id="menu-toggle" style="display: none;">
-        <label for="menu-toggle" class="hamburger-btn">
-            <i class="fas fa-bars"></i>
-        </label>
-        <nav class="contenedor-enlaces-menu-izquierdo">
-            <ul class="enlaces-menu-izquierdo">
-                <li class="enlaces-menu-izquierdo"><a class="enlaces-menu-izquierdo" href="index.html">Inicio</a></li>
-                <li class="enlaces-menu-izquierdo"><a class="enlaces-menu-izquierdo" href="/html/productos.html">Productos</a></li>
-                <li class="enlaces-menu-izquierdo"><a class="enlaces-menu-izquierdo" href="/html/nosotros.html">Nosotros</a></li>
-            </ul>
-        </nav>
-    </div>
-    <div class="menu-centro">
-        <a href="/html/index.html">
-            <img src="/assets/Mil Sabores.png" alt="Logo pasteleria" style="height: 180px;">
+
+<nav class="navbar">
+    <div class="navbar-container">
+
+        <!-- Elementos visibles en móvil -->
+        <a href="/html/index.html" class="navbar-logo-mobile">
+            <img src="/assets/Mil Sabores.png" alt="Logo pasteleria">
         </a>
-    </div>
-    <div class="menu-derecho">
-        <nav class="contenedor-enlaces-menu-derecho">
-            <ul class="enlaces-menu-derecho">
-                <li class="enlaces-menu-derecho"><a class="enlaces-menu-derecho" href="/html/noticias.html">Noticias</a></li>
-                <li class="enlaces-menu-derecho"><a class="enlaces-menu-derecho" href="/html/faq.html">FAQ</a></li>
-                <li class="enlaces-menu-derecho-comprar-online"><a class="enlaces-menu-derecho-comprar-online" href="#">Comprar Online</a></li>
+        <span class="navbar-brand-name">Pastelería Mil Sabores</span>
+        <button class="navbar-toggler" id="navbar-toggler" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Contenedor de enlaces de navegación -->
+        <div class="navbar-links-wrapper" id="navbar-links-wrapper">
+            <ul class="navbar-links-left">
+                <li><a href="/html/index.html">Inicio</a></li>
+                <li><a href="/html/productos.html">Productos</a></li>
+                <li><a href="/html/nosotros.html">Nosotros</a></li>
             </ul>
-        </nav>
+            <a href="/html/index.html" class="navbar-logo-desktop">
+                <img src="/assets/Mil Sabores.png" alt="Logo pasteleria">
+            </a>
+            <ul class="navbar-links-right">
+                <li><a href="/html/noticias.html">Noticias</a></li>
+                <li><a href="/html/faq.html">FAQ</a></li>
+                <li><a class="btn-comprar" href="/html/productos.html">Comprar Online</a></li>
+            </ul>
+        </div>
+
     </div>
-  </div>
 </nav>

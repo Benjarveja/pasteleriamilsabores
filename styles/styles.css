@@ -10,15 +10,6 @@ body{
 header{
     background-color: #FFC0CB;
 }
-
-.footer {
-    text-align: center;
-    padding: 15px;
-    background: #8B4513;
-    color: #B0BEC5;
-    margin-top: 40px;
-}
-
 h1,h2,h3,h4,h5,h6{
     font-family: "Pacifico", cursive !important; 
     color: #5a6063 !important;

@@ -1,68 +1,219 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
-.menu {
-  background: #FFC0CB;
-  border-bottom: 1px solid #eee;
-  padding: 0.62rem 1.25rem;
-  font-family: "Pacifico", cursive;
+/* --- Variables y Estilos Base --- */
+:root {
+    --brand-pink: #FFC0CB;
+    --brand-brown-dark: #5D4037;
+    --brand-brown-light: #8B4513;
+    --brand-background: #FFF5E1;
 }
 
-.menu-area {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.navbar {
+    background: var(--brand-pink);
+    padding: 0 1.9rem;
+    font-family: "Pacifico", cursive;
+    border-bottom: 2px solid rgba(0,0,0,0.05);
 }
 
-.menu-centro img {
-  height: 6.25rem;
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1300px;
+    margin: 0 auto;
+    height: 170px; /* Altura fija para el menú */
 }
 
-
-/* Secciones izquierda y derecha */
-.menu-izquierda ul,
-.menu-derecho ul {
-  list-style: none;
-  display: flex;
-  align-items: center;
-  gap: 1.87rem 3.75rem;
-  
+/* --- Contenedor de Enlaces (Desktop) --- */
+.navbar-links-wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
 }
 
-.menu-izquierda{
-  margin-left: 5.5rem;
-  margin-right: 2rem;
+.navbar-links-left,
+.navbar-links-right {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-grow: 1; /* Hacemos que los contenedores crezcan */
 }
 
-/* Estilos enlaces */
-.menu a {
-  text-decoration: none;
-  color: #5D4037;
-  font-weight: 500;
-  text-transform: uppercase;
-  font-size: 1em;
-  line-height: 1.5em;
+.navbar-links-left {
+    justify-content: flex-end; /* Alineamos items a la derecha */
 }
 
-.menu a:hover {
-  color: #8B4513;
+.navbar-links-right {
+    justify-content: flex-start; /* Alineamos items a la izquierda */
 }
 
-
-/* Botón comprar */
-.enlaces-menu-derecho-comprar-online{
-  background: #8B4513;
-  color: #fff !important;
-  padding: 0.60rem 1.20rem;
-  border-radius: 25px;
-  font-weight: bold;
-}
-.enlaces-menu-derecho-comprar-online:hover {
-  background: #a85920;
+.navbar-links-wrapper a {
+    text-decoration: none;
+    color: var(--brand-brown-dark);
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 1.1em;
+    transition: color 0.2s ease;
 }
 
-.hamburger-btn {
-    display: none;
-    cursor: pointer;
-    font-size: 1rem;
-    color: #5D4037;
+.navbar-links-wrapper a:hover {
+    color: var(--brand-brown-light);
+}
+
+.btn-comprar {
+    background: var(--brand-brown-light);
+    color: white !important;
+    padding: 0.7rem 1.4rem;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+.btn-comprar:hover {
+    background: var(--brand-brown-dark);
+}
+
+/* --- Logos --- */
+.navbar-logo-desktop {
+    padding: 0 2rem; /* Espacio a los lados del logo */
+}
+
+.navbar-logo-desktop img {
+    height: 180px; /* Logo grande para desktop */
+    transition: transform 0.3s ease;
+    display: block;
+}
+.navbar-logo-desktop:hover img {
+    transform: scale(1.05);
+}
+
+.navbar-logo-mobile,
+.navbar-brand-name,
+.navbar-toggler {
+    display: none; /* Ocultos en desktop */
+}
+
+/* --- Estilos para el Menú Responsivo (Móvil) --- */
+@media (max-width: 1110px) {
+    .navbar-container {
+        height: 80px; /* Menú más pequeño en móvil */
+    }
+
+    /* Ocultar menú de desktop */
+    .navbar-links-wrapper {
+        display: none;
+        position: absolute;
+        top: 80px; /* Justo debajo del menú */
+        left: 0;
+        width: 100%;
+        background-color: var(--brand-pink);
+        flex-direction: column;
+        padding: 1rem 0;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        z-index: 100; /* Asegura que el menú esté sobre el contenido */
+    }
+
+    .navbar-links-wrapper.is-active {
+        display: flex; /* Mostrar el menú desplegable */
+    }
+
+    .navbar-links-left,
+    .navbar-links-right {
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+        /* Reseteamos el crecimiento para el layout móvil */
+        flex-grow: 0;
+    }
+
+    .navbar-links-left {
+        justify-content: center; /* Centramos en móvil */
+    }
+
+    .navbar-links-right {
+        justify-content: center; /* Centramos en móvil */
+    }
+    
+    .navbar-links-left li, 
+    .navbar-links-right li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar-links-wrapper a {
+        display: block;
+        padding: 1rem;
+        width: 100%;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .btn-comprar {
+        margin-top: 1rem;
+        border-radius: 0;
+    }
+
+    .navbar-links-wrapper .navbar-logo-desktop {
+        display: none; /* Ocultar logo grande DENTRO del menú desplegable */
+    }
+
+    /* Mostrar elementos del header móvil */
+    .navbar-logo-mobile {
+        display: block;
+    }
+    .navbar-logo-mobile img {
+        height: 60px; /* Logo pequeño */
+    }
+
+    .navbar-brand-name {
+        display: block;
+        font-size: 1.4em;
+        color: var(--brand-brown-dark);
+    }
+
+    .navbar-toggler {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    /* Icono de hamburguesa */
+    .navbar-toggler-icon {
+        display: block;
+        width: 30px;
+        height: 3px;
+        background-color: var(--brand-brown-dark);
+        position: relative;
+        transition: background-color 0.3s ease;
+    }
+    .navbar-toggler-icon::before,
+    .navbar-toggler-icon::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background-color: var(--brand-brown-dark);
+        left: 0;
+        transition: transform 0.3s ease;
+    }
+    .navbar-toggler-icon::before {
+        top: -9px;
+    }
+    .navbar-toggler-icon::after {
+        bottom: -9px;
+    }
+
+    /* Animación del icono a 'X' */
+    .navbar-toggler.is-active .navbar-toggler-icon {
+        background-color: transparent; /* La barra del medio desaparece */
+    }
+    .navbar-toggler.is-active .navbar-toggler-icon::before {
+        transform: translateY(9px) rotate(45deg);
+    }
+    .navbar-toggler.is-active .navbar-toggler-icon::after {
+        transform: translateY(-9px) rotate(-45deg);
+    }
 }

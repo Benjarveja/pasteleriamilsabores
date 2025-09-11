@@ -58,6 +58,210 @@ h1 {
     align-items: center;
     padding: 15px;
     text-align: center;
+    cursor: pointer; /* Añadimos cursor pointer */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.producto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+}
+
+.producto-card img {
+    width: 100%;
+    height: 180px; /* Altura fija para la imagen */
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.producto-card h3 {
+    font-size: 1.2em;
+    margin: 10px 0 5px;
+}
+
+.producto-card p {
+    font-size: 1em;
+    color: #5D4037; /* Color de texto más oscuro para legibilidad */
+    margin-bottom: 10px;
+}
+
+.producto-card .precio {
+    font-weight: bold;
+    color: #8B4513; /* Marrón más oscuro */
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.producto-card .btn-agregar-carrito {
+    font-family: "Lato", sans-serif !important;
+    background: #8B4513;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 19px;
+    cursor: pointer;
+    transition: background 0.3s;
+    width: auto; /* Ancho automático */
+    margin-top: auto; /* Empuja el botón hacia abajo */
+}
+
+.producto-card .btn-agregar-carrito:hover {
+    background: #5D4037;
+}
+
+/* --- Estilos para el Modal de Detalles del Producto --- */
+.producto-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0s 0.3s;
+}
+
+.producto-modal-overlay.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0s;
+}
+
+.producto-modal-content {
+    background-color: #FFFFFF;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.producto-modal-overlay.is-visible .producto-modal-content {
+    transform: scale(1);
+}
+
+.producto-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #888;
+    line-height: 1;
+}
+
+.producto-modal-body img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.producto-modal-body h2 {
+    font-family: "Pacifico", cursive;
+    color: #5a6063;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.producto-modal-body .precio {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #8B4513;
+    margin-bottom: 15px;
+}
+
+.producto-modal-body .descripcion {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #5D4037;
+    margin-bottom: 15px;
+}
+
+.producto-modal-body .historia {
+    background-color: #FFF5E1;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid #FFC0CB;
+    margin-top: 20px;
+}
+
+.producto-modal-body .historia h4 {
+    margin-top: 0;
+    font-family: "Pacifico", cursive;
+    color: #5a6063;
+}
+
+
+.productos-section {
+    max-width: 1200px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.filtros {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.filtros select,
+.filtros input,
+.filtros button {
+    padding: 8px;
+    border: 1px solid #FFC0CB;
+    border-radius: 10px;
+}
+
+.filtros button {
+    background: #8B4513;
+    color: #fff;
+    cursor: pointer;
+}
+
+.filtros button:hover {
+    background: #985627c9;
+}
+
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.producto-card {
+    background: #fff0f2;
+    border: 1px solid #FFC0CB;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    text-align: center;
 }
 
 .card img {

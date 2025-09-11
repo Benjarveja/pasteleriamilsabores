@@ -185,3 +185,23 @@
 .btn-finalizar-compra:hover {
     background-color: #5D4037;
 }
+
+/* Estilos para el aviso de producto agregado */
+.aviso-carrito {
+    position: fixed;
+    bottom: -100px; /* Inicia fuera de la pantalla */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px 25px;
+    background-color: #f28a9c; /* Marrón oscuro */
+    color: #5a6063; /* Crema claro */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 1002;
+    transition: bottom 0.5s ease;
+    font-weight: bold;
+}
+
+.aviso-carrito.visible {
+    bottom: 20px; /* Se desliza hacia arriba */
+}

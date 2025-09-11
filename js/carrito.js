@@ -30,6 +30,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 <button class="btn-finalizar-compra" id="btn-finalizar-compra">Finalizar Compra</button>
             </div>
         </div>
+
+        <!-- Aviso de producto agregado -->
+        <div class="aviso-carrito" id="aviso-carrito"></div>
     `;
     body.insertAdjacentHTML('beforeend', carritoHtml);
 
@@ -40,11 +43,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const carritoItemsContainer = document.getElementById('carrito-items');
     const carritoTotalEl = document.getElementById('carrito-total');
     const btnFinalizarCompra = document.getElementById('btn-finalizar-compra');
+    const avisoCarrito = document.getElementById('aviso-carrito');
 
     // --- ESTADO DEL CARRITO ---
     let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    let avisoTimeout;
 
     // --- FUNCIONES ---
+
+    const mostrarAviso = (mensaje) => {
+        avisoCarrito.textContent = mensaje;
+        avisoCarrito.classList.add('visible');
+
+        clearTimeout(avisoTimeout);
+        avisoTimeout = setTimeout(() => {
+            avisoCarrito.classList.remove('visible');
+        }, 2500);
+    };
 
     const guardarCarrito = () => {
         localStorage.setItem('carrito', JSON.stringify(carrito));
@@ -59,6 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         guardarCarrito();
         renderizarCarrito();
+        mostrarAviso('¡Producto añadido al carrito!');
     };
 
     const eliminarDelCarrito = (id) => {
@@ -95,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <img src="${item.imagen}" alt="${item.nombre}">
                     <div class="carrito-item-info">
                         <h4>${item.nombre}</h4>
-                        <span class="carrito-item-precio">$${item.precio.toLocaleString('es-CL')}</span>
+                        <span class="carrito-item-precio">${item.precio.toLocaleString('es-CL')}</span>
                         <div class="carrito-item-cantidad">
                             <button class="btn-restar-cantidad">-</button>
                             <span>${item.cantidad}</span>
@@ -110,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
             totalItems += item.cantidad;
         });
 
-        carritoTotalEl.textContent = `$${total.toLocaleString('es-CL')}`;
+        carritoTotalEl.textContent = `${total.toLocaleString('es-CL')}`;
         carritoContador.textContent = totalItems;
         carritoContador.style.display = totalItems > 0 ? 'flex' : 'none';
     };

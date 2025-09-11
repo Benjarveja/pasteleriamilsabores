@@ -23,12 +23,12 @@ function mostrarProductos(lista) {
 
     lista.forEach(prod => {
         const card = `
-            <div class="card">
+            <div class="card producto-card" data-id="${prod.codigo}">
                 <img src="${prod.imagen}" alt="${prod.nombre}">
                 <h3>${prod.nombre}</h3>
                 <p>${prod.categoria}</p>
-                <p class="precio">$${prod.precio.toLocaleString('es-CL')} CLP</p>
-                <button>Agregar al carrito</button>
+                <p class="precio">${prod.precio.toLocaleString('es-CL')} CLP</p>
+                <button class="btn-agregar-carrito">Agregar al carrito</button>
             </div>
         `;
         contenedor.innerHTML += card;

@@ -185,23 +185,3 @@
 .btn-finalizar-compra:hover {
     background-color: #5D4037;
 }
-
-/* Estilo para el botón de añadir al carrito en las tarjetas de producto */
-.btn-agregar-carrito {
-    display: block;
-    width: 100%;
-    margin-top: 10px;
-    padding: 10px;
-    background-color: #5D4037;
-    color: #FFF5E1;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: bold;
-    transition: background-color 0.2s;
-}
-
-.btn-agregar-carrito:hover {
-    background-color: #8B4513;
-}

@@ -1,0 +1,207 @@
+
+/* Estilos para el Carrito de Compras */
+
+.carrito-flotante {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #8B4513; /* Marrón del footer */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 1000;
+    transition: transform 0.2s ease;
+}
+
+.carrito-flotante:hover {
+    transform: scale(1.1);
+}
+
+.carrito-flotante svg {
+    width: 30px;
+    height: 30px;
+    fill: #FFF5E1; /* Fondo de la página */
+}
+
+.carrito-contador {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #FFC0CB; /* Rosa del header */
+    color: #5D4037;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border: 2px solid #FFF5E1;
+}
+
+/* Estilos para la ventana modal del carrito */
+.carrito-modal {
+    position: fixed;
+    top: 0;
+    right: -400px; /* Inicia fuera de la pantalla */
+    width: 380px;
+    height: 100%;
+    background-color: #FFF5E1;
+    box-shadow: -4px 0 15px rgba(0,0,0,0.2);
+    z-index: 1001;
+    transition: right 0.4s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.carrito-modal.visible {
+    right: 0; /* Se desliza hacia adentro */
+}
+
+.carrito-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #FFC0CB;
+    border-bottom: 1px solid #8B4513;
+}
+
+.carrito-header h3 {
+    margin: 0;
+    font-family: "Pacifico", cursive;
+    color: #5a6063;
+}
+
+.cerrar-carrito {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #5D4037;
+}
+
+.carrito-items {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 15px;
+}
+
+.carrito-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #E0E0E0;
+    padding-bottom: 15px;
+}
+
+.carrito-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 15px;
+}
+
+.carrito-item-info {
+    flex-grow: 1;
+}
+
+.carrito-item-info h4 {
+    margin: 0 0 5px 0;
+    font-size: 16px;
+    color: #5D4037;
+    font-family: "Lato", sans-serif;
+}
+
+.carrito-item-precio {
+    font-size: 14px;
+    color: #8B4513;
+}
+
+.carrito-item-cantidad {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+}
+
+.carrito-item-cantidad button {
+    background-color: #E0E0E0;
+    border: none;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.carrito-item-cantidad span {
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+.btn-eliminar-item {
+    background: none;
+    border: none;
+    color: #C62828;
+    font-size: 18px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.carrito-footer {
+    padding: 20px;
+    border-top: 1px solid #8B4513;
+    background-color: #FFF5E1;
+}
+
+.carrito-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: bold;
+    color: #5D4037;
+    margin-bottom: 20px;
+}
+
+.btn-finalizar-compra {
+    width: 100%;
+    padding: 15px;
+    background-color: #8B4513;
+    color: #FFF5E1;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-finalizar-compra:hover {
+    background-color: #5D4037;
+}
+
+/* Estilo para el botón de añadir al carrito en las tarjetas de producto */
+.btn-agregar-carrito {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #5D4037;
+    color: #FFF5E1;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.btn-agregar-carrito:hover {
+    background-color: #8B4513;
+}

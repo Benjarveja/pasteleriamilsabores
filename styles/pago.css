@@ -1,0 +1,80 @@
+body {
+    background-color: #FFF5E1;
+}
+.pago-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+.pago-container h1 {
+    text-align: center;
+    color: #5a6063;
+    margin-bottom: 30px;
+}
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+.form-group label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #5D4037;
+}
+.form-group input, .form-group select {
+    padding: 12px;
+    border: 1px solid #D7CCC8;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: "Lato", sans-serif;
+}
+.form-group input:focus {
+    outline: none;
+    border-color: #8B4513;
+    box-shadow: 0 0 0 2px rgba(139, 69, 19, 0.2);
+}
+.resumen-pedido {
+    grid-column: 1 / -1;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #D7CCC8;
+}
+.resumen-pedido h2 {
+    color: #5a6063;
+    margin-bottom: 20px;
+}
+#resumen-items {
+    margin-bottom: 20px;
+}
+#resumen-total {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: right;
+    color: #5D4037;
+}
+.btn-pagar {
+    width: 100%;
+    padding: 18px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #FFF5E1;
+    background-color: #8B4513;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.2s;
+}
+.btn-pagar:hover {
+    background-color: #5D4037;
+}

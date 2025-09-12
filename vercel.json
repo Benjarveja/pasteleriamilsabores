@@ -1,0 +1,17 @@
+{
+  "builds": [
+    { "src": "html/**/*.html", "use": "@vercel/static" },
+    { "src": "assets/**/*", "use": "@vercel/static" },
+    { "src": "js/**/*", "use": "@vercel/static" },
+    { "src": "styles/**/*", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "/", "dest": "/html/index.html" },
+    { "src": "/faq", "dest": "/html/faq.html" },
+    { "src": "/menu", "dest": "/html/menu.html" },
+    { "src": "/nosotros", "dest": "/html/nosotros.html" },
+    { "src": "/noticias", "dest": "/html/noticias.html" },
+    { "src": "/pago", "dest": "/html/pago.html" },
+    { "src": "/productos", "dest": "/html/productos.html" }
+  ]
+}

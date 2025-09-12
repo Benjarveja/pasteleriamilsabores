@@ -60,21 +60,26 @@
 }
 
 /* Sección de Noticias */
-.footer-news .news-item {
+#footer-news-container .news-item {
+    background-color: transparent;
+    border: none;
+    padding: 0;
     margin-bottom: 15px;
 }
 
-.footer-news .news-item a {
-    color: rgba(255, 255, 255, 0.9);
-    text-decoration: none;
+#footer-news-container .news-item a {
+    color: #FFC0CB; /* Color rosa del header para destacar */
     font-weight: bold;
-    font-size: 1em;
+    text-decoration: none;
     transition: color 0.2s;
 }
 
-.footer-news .news-item p {
-    font-size: 0.85em;
-    color: rgba(255, 255, 255, 0.7);
+#footer-news-container .news-item a:hover {
+    color: #FFF5E1; /* Color crema al pasar el mouse */
+}
+
+#footer-news-container .news-item p {
+    color: #FFF5E1; /* Color crema claro para el texto */
     margin-top: 5px;
 }
 

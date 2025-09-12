@@ -29,45 +29,150 @@
                 </div>
             </div>
 
-            <form id="form-pago">
+            <form id="form-pago" novalidate>
                 <h2>Tus Datos</h2>
+                <button type="button" id="btn-login-register" class="btn-secondary">¿Ya tienes una cuenta? Inicia sesión o regístrate</button>
                 <div class="form-grid">
                     <div class="form-group">
-                        <label for="nombre">Nombre</label>
-                        <input type="text" id="nombre" required>
+                        <label for="run">RUN (sin puntos y con guion)</label>
+                        <input type="text" id="run" placeholder="Ej: 12345678-9" required>
+                        <span class="error-message" id="run-error"></span>
                     </div>
                     <div class="form-group">
-                        <label for="apellido">Apellido</label>
-                        <input type="text" id="apellido" required>
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" placeholder="Ej: Karina" required>
+                        <span class="error-message" id="nombre-error"></span>
                     </div>
-                    <div class="form-group full-width">
-                        <label for="email">Correo Electrónico</label>
-                        <input type="email" id="email" required>
+                    <div class="form-group">
+                        <label for="apellidos">Apellidos</label>
+                        <input type="text" id="apellidos" placeholder="Ej: Arrue Donoso" required>
+                        <span class="error-message" id="apellidos-error"></span>
                     </div>
-                    <div class="form-group full-width">
-                        <label for="direccion">Dirección de Envío</label>
-                        <input type="text" id="direccion" required>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Ej: usuario@gmail.com" required>
+                        <span class="error-message" id="email-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="celular">Celular</label>
+                        <input type="tel" id="celular" placeholder="Ej: 912345678" required>
+                        <span class="error-message" id="celular-error"></span>
                     </div>
                 </div>
 
-                <h2>Datos de Pago</h2>
-                <div class="form-grid">
-                    <div class="form-group full-width">
-                        <label for="tarjeta">Número de Tarjeta</label>
-                        <input type="text" id="tarjeta" placeholder="0000 0000 0000 0000" required>
+                <h2>Opciones de Entrega</h2>
+                <div class="form-group">
+                    <div class="radio-group">
+                        <input type="radio" id="envio" name="opcion-entrega" value="envio" required>
+                        <label for="envio">Envío a domicilio</label>
                     </div>
-                    <div class="form-group">
-                        <label for="expiracion">Fecha de Expiración</label>
-                        <input type="text" id="expiracion" placeholder="MM/AA" required>
+                    <div class="radio-group">
+                        <input type="radio" id="retiro" name="opcion-entrega" value="retiro">
+                        <label for="retiro">Retiro en sucursal</label>
                     </div>
-                    <div class="form-group">
-                        <label for="cvv">CVV</label>
-                        <input type="text" id="cvv" placeholder="123" required>
+                    <span class="error-message" id="opcion-entrega-error"></span>
+                </div>
+
+                <div id="direccion-envio-group" class="form-group hidden">
+                    <label for="direccion">Dirección de Envío</label>
+                    <input type="text" id="direccion" placeholder="Ej: Calle Falsa 123, Depto 45, Providencia, Santiago" required>
+                    <span class="error-message" id="direccion-error"></span>
+                </div>
+
+                <div id="sucursal-retiro-group" class="form-group hidden">
+                    <label for="sucursal">Selecciona Sucursal</label>
+                    <select id="sucursal" required>
+                        <option value="">-- Selecciona una sucursal --</option>
+                        <option value="Casa Matriz">Casa Matriz: Av. Providencia 1234, Providencia, Santiago.</option>
+                        <option value="Las Condes">Las Condes: Av. Apoquindo 5432, Las Condes, Santiago.</option>
+                        <option value="Ñuñoa">Ñuñoa: Av. Irarrázaval 3456, Ñuñoa, Santiago.</option>
+                        <option value="Santiago Centro">Santiago Centro: Av. Libertador Bernardo O'Higgins 987, Santiago Centro.</option>
+                    </select>
+                    <span class="error-message" id="sucursal-error"></span>
+                </div>
+
+                <h2>Método de Pago</h2>
+                <div class="form-group">
+                    <div class="radio-group">
+                        <input type="radio" id="tarjeta" name="metodo-pago" value="tarjeta" required>
+                        <label for="tarjeta">Tarjeta de Crédito/Débito</label>
                     </div>
+                    <div class="radio-group">
+                        <input type="radio" id="transferencia" name="metodo-pago" value="transferencia">
+                        <label for="transferencia">Transferencia Bancaria</label>
+                    </div>
+                    <span class="error-message" id="metodo-pago-error"></span>
                 </div>
 
                 <button type="submit" class="btn-pagar">Realizar Pago</button>
             </form>
+
+            <!-- Modal Overlay -->
+            <div id="modal-overlay" class="modal-overlay">
+                <div class="modal-content">
+                    <span class="close-button" id="close-modal">&times;</span>
+                    <div id="modal-choice-content">
+                        <h2>¿Qué deseas hacer?</h2>
+                        <button id="btn-show-login" class="btn-primary">Iniciar Sesión</button>
+                        <button id="btn-show-register" class="btn-secondary">Registrarse</button>
+                    </div>
+
+                    <!-- Login Modal -->
+                    <div id="login-modal" class="modal-form hidden">
+                        <h2>Iniciar Sesión</h2>
+                        <form id="form-login" novalidate>
+                            <div class="form-group">
+                                <label for="login-username">Usuario</label>
+                                <input type="text" id="login-username" required>
+                                <span class="error-message" id="login-username-error"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="login-password">Contraseña</label>
+                                <input type="password" id="login-password" required>
+                                <span class="error-message" id="login-password-error"></span>
+                            </div>
+                            <button type="submit" class="btn-primary">Ingresar</button>
+                            <p class="modal-message" id="login-message"></p>
+                            <button type="button" id="btn-back-login" class="btn-secondary">Volver</button>
+                        </form>
+                    </div>
+
+                    <!-- Register Modal -->
+                    <div id="register-modal" class="modal-form hidden">
+                        <h2>Registrarse</h2>
+                        <form id="form-register" novalidate>
+                            <div class="form-group">
+                                <label for="register-run">RUN (sin puntos y con guion)</label>
+                                <input type="text" id="register-run" placeholder="Ej: 12345678-9" required>
+                                <span class="error-message" id="register-run-error"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="register-nombre">Nombre</label>
+                                <input type="text" id="register-nombre" required>
+                                <span class="error-message" id="register-nombre-error"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="register-apellidos">Apellidos</label>
+                                <input type="text" id="register-apellidos" required>
+                                <span class="error-message" id="register-apellidos-error"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="register-email">Email</label>
+                                <input type="email" id="register-email" required>
+                                <span class="error-message" id="register-email-error"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="register-celular">Celular</label>
+                                <input type="tel" id="register-celular" placeholder="Ej: 912345678" required>
+                                <span class="error-message" id="register-celular-error"></span>
+                            </div>
+                            <button type="submit" class="btn-primary">Registrar</button>
+                            <p class="modal-message" id="register-message"></p>
+                            <button type="button" id="btn-back-register" class="btn-secondary">Volver</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 

@@ -131,26 +131,6 @@ document.addEventListener('DOMContentLoaded', () => {
         carritoContador.style.display = totalItems > 0 ? 'flex' : 'none';
     };
 
-    const adjuntarListenersAProductos = () => {
-        const botonesAgregar = document.querySelectorAll('.btn-agregar-carrito');
-        botonesAgregar.forEach(boton => {
-            // Evita adjuntar el listener múltiples veces
-            if (boton.dataset.listenerAdjunto) return;
-
-            boton.dataset.listenerAdjunto = 'true';
-            boton.addEventListener('click', (e) => {
-                const tarjeta = e.target.closest('.producto-card');
-                const producto = {
-                    id: tarjeta.dataset.id,
-                    nombre: tarjeta.querySelector('h3').textContent,
-                    precio: parseInt(tarjeta.querySelector('.precio').textContent.replace(/[^0-9]/g, '')),
-                    imagen: tarjeta.querySelector('img').src
-                };
-                agregarAlCarrito(producto);
-            });
-        });
-    };
-
     // --- EVENT LISTENERS ---
 
     carritoFlotante.addEventListener('click', () => {
@@ -182,21 +162,40 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- OBSERVADOR PARA PRODUCTOS DINÁMICOS ---
-    const observer = new MutationObserver((mutations) => {
-        for (const mutation of mutations) {
-            if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
-                adjuntarListenersAProductos();
-                break; // Solo necesitamos ejecutarlo una vez por lote de cambios
+    // Listener global para los botones "Agregar al carrito" usando delegación de eventos
+    document.addEventListener('click', (e) => {
+        const botonAgregar = e.target.closest('.btn-agregar-carrito');
+        if (botonAgregar) {
+            let producto;
+            const tarjeta = botonAgregar.closest('.producto-card');
+
+            if (tarjeta) {
+                // Lógica para obtener datos desde una tarjeta de producto
+                producto = {
+                    id: tarjeta.dataset.id,
+                    nombre: tarjeta.querySelector('h3').textContent,
+                    precio: parseInt(tarjeta.querySelector('.precio').textContent.replace(/[^0-9]/g, '')),
+                    imagen: tarjeta.querySelector('img').src
+                };
+            } else {
+                // Lógica para obtener datos desde los atributos data-* del botón (usado en el modal)
+                const { id, nombre, precio, imagen } = botonAgregar.dataset;
+                if (id && nombre && precio && imagen) {
+                    producto = {
+                        id,
+                        nombre,
+                        precio: parseInt(precio),
+                        imagen
+                    };
+                }
+            }
+
+            if (producto) {
+                agregarAlCarrito(producto);
             }
         }
     });
 
-    if (listaProductos) {
-        observer.observe(listaProductos, { childList: true, subtree: true });
-    }
-
     // --- INICIALIZACIÓN ---
     renderizarCarrito();
-    adjuntarListenersAProductos(); // Para productos que ya estén en el DOM al cargar
 });

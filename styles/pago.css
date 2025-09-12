@@ -78,3 +78,148 @@ body {
 .btn-pagar:hover {
     background-color: #5D4037;
 }
+
+/* --- Nuevos estilos para el formulario de pago y modales --- */
+
+.radio-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.radio-group input[type="radio"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+}
+
+.radio-group label {
+    margin-bottom: 0;
+    font-weight: normal;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 5px;
+    display: none; /* Oculto por defecto */
+}
+
+.btn-secondary {
+    background-color: #D7CCC8;
+    color: #5D4037;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.btn-secondary:hover {
+    background-color: #BCAAA4;
+}
+
+.btn-primary {
+    background-color: #8B4513;
+    color: #FFF5E1;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: #5D4037;
+}
+
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background-color: #FFFFFF;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    text-align: center;
+    max-height: 80vh; /* Added to limit height */
+    overflow-y: auto; /* Added to enable vertical scrolling */
+}
+
+.modal-content h2 {
+    color: #5a6063;
+    margin-bottom: 20px;
+}
+
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #5a6063;
+}
+
+.close-button:hover {
+    color: #8B4513;
+}
+
+.modal-form {
+    margin-top: 20px;
+}
+
+.modal-form .form-group {
+    margin-bottom: 15px;
+}
+
+.modal-form input[type="text"],
+.modal-form input[type="password"],
+.modal-form input[type="email"],
+.modal-form input[type="tel"] {
+    width: calc(100% - 24px); /* Adjust for padding */
+    padding: 12px;
+    border: 1px solid #D7CCC8;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.modal-form button {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.modal-message {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.hidden {
+    display: none !important;
+}

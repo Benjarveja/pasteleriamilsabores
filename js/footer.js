@@ -40,14 +40,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 const footerInstagramGrid = document.getElementById('footer-instagram-grid');
                 if (footerInstagramGrid) {
                     const instagramImages = [
-                        '/assets/noticia50anos.jpg',
-                        '/assets/noticiadiaadia.jpg',
-                        '/assets/noticiaguinness.jpg',
-                        '/assets/noticiarecetas.jpg',
-                        '/assets/duocuc.png',
-                        '/assets/PSA001.jpg',
-                        '/assets/PT001.jpg',
-                        '/assets/PV001.jpg'
+                        '/assets/insta1.jpg',
+                        '/assets/insta2.jpg',
+                        '/assets/insta3.jpg',
+                        '/assets/insta4.jpg',
+                        '/assets/insta5.jpg',
+                        '/assets/insta6.jpg',
+                        '/assets/insta7.jpg',
+                        '/assets/insta8.jpg'
                     ];
 
                     footerInstagramGrid.innerHTML = instagramImages.map(src => `
